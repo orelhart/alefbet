@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="grid_horizontal_spacing">24dp</dimen>
+    <dimen name="grid_vertical_spacing">10dp</dimen>
+    <dimen name="lettter_width">60dp</dimen>
+    <dimen name="lettter_hight">100dp</dimen>
+    <integer name="letters_in_row">5</integer>
+    <dimen name="cell_margin">10dp</dimen>
+
+
+</resources>
