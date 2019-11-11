@@ -1,7 +1,5 @@
-package com.example.alefbet;
+package com.orelhart.alefbet;
 
-import android.app.Activity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,10 +7,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.alefbet.data.AlphaBet;
-import com.example.alefbet.data.Letter;
-
-import java.util.Arrays;
+import com.orelhart.alefbet.data.AlphaBet;
+import com.orelhart.alefbet.data.Letter;
 
 
 public class LettersAdapter extends RecyclerView.Adapter<LettersAdapter.LettersViewHolder> {

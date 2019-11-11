@@ -17,7 +17,7 @@
         android:orientation="vertical"
         tools:context=".MainActivity">
 
-        <com.example.alefbet.LetterGridLayout
+        <com.orelhart.alefbet.LetterGridLayout
 
             android:id="@+id/grid_layout"
             android:layout_width="match_parent"

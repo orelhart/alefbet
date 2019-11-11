@@ -1,19 +1,11 @@
-package com.example.alefbet;
+package com.orelhart.alefbet;
 
 import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.VectorDrawable;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.util.TypedValue;
-import android.widget.TextView;
 
-import androidx.annotation.DrawableRes;
-import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.AppCompatTextView;
 
-import com.example.alefbet.data.Letter;
+import com.orelhart.alefbet.data.Letter;
 
 //public class LetterView extends androidx.appcompat.widget.AppCompatTextView {
 public class LetterView extends AppCompatTextView {

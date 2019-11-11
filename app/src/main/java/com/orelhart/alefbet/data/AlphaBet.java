@@ -1,18 +1,7 @@
-package com.example.alefbet.data;
+package com.orelhart.alefbet.data;
 
-import androidx.annotation.DrawableRes;
-import androidx.appcompat.content.res.AppCompatResources;
-
-import com.example.alefbet.R;
-
-import org.w3c.dom.Node;
-
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class AlphaBet implements Cloneable {
 

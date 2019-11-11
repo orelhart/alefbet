@@ -1,4 +1,4 @@
-package com.example.alefbet;
+package com.orelhart.alefbet;
 
 import org.junit.Test;
 

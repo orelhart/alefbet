@@ -1,4 +1,4 @@
-package com.example.alefbet.data;
+package com.orelhart.alefbet.data;
 
 public class Letter {
 

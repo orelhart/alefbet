@@ -1,19 +1,13 @@
-package com.example.alefbet;
+package com.orelhart.alefbet;
 
 import android.animation.ObjectAnimator;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.animation.DecelerateInterpolator;
-import android.widget.Button;
-import android.widget.GridLayout;
 
 
 import androidx.appcompat.app.AlertDialog;
@@ -21,8 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.alefbet.data.AlphaBet;
-import com.example.alefbet.data.Letter;
+import com.orelhart.alefbet.data.AlphaBet;
 
 public class MainActivity extends AppCompatActivity implements LetterView.OnClickListener{
 

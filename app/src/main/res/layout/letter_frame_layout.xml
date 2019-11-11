@@ -9,7 +9,7 @@
     android:background="@drawable/letter_view_border_rounded_corners"
         >
 
-    <com.example.alefbet.LetterView
+    <com.orelhart.alefbet.LetterView
         android:id="@+id/letter_view_in_frame"
         android:padding="6dp"
         android:layout_gravity="center"

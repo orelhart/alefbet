@@ -1,17 +1,15 @@
-package com.example.alefbet;
+package com.orelhart.alefbet;
 
 import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
 import android.widget.GridLayout;
 
 import androidx.annotation.RequiresApi;
 
-import com.example.alefbet.data.AlphaBet;
-import com.example.alefbet.data.Letter;
+import com.orelhart.alefbet.data.AlphaBet;
 
 public class LetterGridLayout extends GridLayout {
 
