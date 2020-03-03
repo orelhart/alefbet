@@ -1,50 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/blackboard_backround"
+    >
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/blackboard_backround"
-        android:scaleType="fitXY"
-        tools:ignore="ContentDescription" />
+   <LinearLayout
+       android:orientation="horizontal"
+       android:layout_height="wrap_content"
+       android:layout_width="match_parent"
+       android:layout_gravity="center"
+       android:gravity="center">
+
+
+       <TextView
+           android:layout_width="@dimen/main_manu_view_width"
+           android:layout_height="@dimen/main_manu_view_hight"
+           android:layout_gravity="center"
+           android:gravity="center"
+           android:layout_weight="1"
+           android:id="@+id/identify_letter"
+           android:text="@string/identify_the_letter"
+           android:padding="6dp"
+           android:textSize="36sp"
+           android:textColor="@android:color/black"
+           android:textStyle="bold"
+           android:background="@drawable/letter_view_border"
+           android:layout_margin="@dimen/cell_margin"/>
+
+       <TextView
+           android:layout_width="@dimen/main_manu_view_width"
+           android:layout_height="@dimen/main_manu_view_hight"
+           android:gravity="center"
+           android:layout_gravity="center"
+           android:layout_weight="1"
+           android:id="@+id/letters_order"
+           android:text="@string/letters_order"
+           android:padding="6dp"
+           android:textSize="36sp"
+           android:textColor="@android:color/black"
+           android:textStyle="bold"
+           android:background="@drawable/letter_view_border"
+           android:layout_margin="@dimen/cell_margin"/>
+
+   </LinearLayout>
 
     <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
-
-        <com.orelhart.alefbet.LetterGridLayout
-
-            android:id="@+id/grid_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:clipChildren="false"
-            android:clipToPadding="false"
-            android:rotationY="180" />
+        android:layout_gravity="center"
+        android:gravity="center">
 
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+        <TextView
+            android:layout_width="@dimen/main_manu_view_width"
+            android:layout_height="@dimen/main_manu_view_hight"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/game_3"
+            android:text="@string/identify_the_letter"
+            android:padding="6dp"
+            android:textSize="36sp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:background="@drawable/letter_view_border"
+            android:layout_margin="@dimen/cell_margin"/>
+
+        <TextView
+            android:layout_width="@dimen/main_manu_view_width"
+            android:layout_height="@dimen/main_manu_view_hight"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/game_4"
+            android:text="@string/comming_soon"
+            android:padding="6dp"
+            android:textSize="36sp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:background="@drawable/letter_view_border"
+            android:layout_margin="@dimen/cell_margin"/>
 
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:rotationY="180"
-                android:background="@android:color/transparent" />
+
+        </LinearLayout>
 
 
-
-        </FrameLayout>
-
-    </LinearLayout>
-</FrameLayout>
+ </LinearLayout>

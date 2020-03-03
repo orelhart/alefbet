@@ -6,6 +6,8 @@
     <dimen name="lettter_hight">100dp</dimen>
     <integer name="letters_in_row">5</integer>
     <dimen name="cell_margin">10dp</dimen>
+    <dimen name="main_manu_view_width">140dp</dimen>
+    <dimen name="main_manu_view_hight">200dp</dimen>
 
 
 </resources>

@@ -4,4 +4,7 @@
     <string name="alert_dialog_title">כל הכבוד!</string>
     <string name="alert_dialog_text">הצלחת לסדר את כל האותיות!</string>
     <string name="alert_dialog_button">התחל מחדש</string>
+    <string name="letters_order">סדר את האותיות</string>
+    <string name="identify_the_letter"> מצא את האות</string>
+    <string name="comming_soon"> בקרוב</string>
 </resources>
