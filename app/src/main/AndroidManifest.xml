@@ -9,9 +9,10 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="sensorPortrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.orelhart.alefbet.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".LettersOrderActivity" />
+        <activity android:name=".IdentifyLetterActivity" />
     </application>
 
 </manifest>

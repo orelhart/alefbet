@@ -1,93 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:background="@drawable/blackboard_backround"
-    >
+    android:layout_height="match_parent">
 
-   <LinearLayout
-       android:orientation="horizontal"
-       android:layout_height="wrap_content"
-       android:layout_width="match_parent"
-       android:layout_gravity="center"
-       android:gravity="center">
-
-
-       <TextView
-           android:layout_width="@dimen/main_manu_view_width"
-           android:layout_height="@dimen/main_manu_view_hight"
-           android:layout_gravity="center"
-           android:gravity="center"
-           android:layout_weight="1"
-           android:id="@+id/identify_letter"
-           android:text="@string/identify_the_letter"
-           android:padding="6dp"
-           android:textSize="36sp"
-           android:textColor="@android:color/black"
-           android:textStyle="bold"
-           android:background="@drawable/letter_view_border"
-           android:layout_margin="@dimen/cell_margin"/>
-
-       <TextView
-           android:layout_width="@dimen/main_manu_view_width"
-           android:layout_height="@dimen/main_manu_view_hight"
-           android:gravity="center"
-           android:layout_gravity="center"
-           android:layout_weight="1"
-           android:id="@+id/letters_order"
-           android:text="@string/letters_order"
-           android:padding="6dp"
-           android:textSize="36sp"
-           android:textColor="@android:color/black"
-           android:textStyle="bold"
-           android:background="@drawable/letter_view_border"
-           android:layout_margin="@dimen/cell_margin"/>
-
-   </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/backround_test"
+        android:scaleType="centerCrop"
+        tools:ignore="ContentDescription" />
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:gravity="center">
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:id="@+id/linear_layout">
 
-
-        <TextView
-            android:layout_width="@dimen/main_manu_view_width"
-            android:layout_height="@dimen/main_manu_view_hight"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:id="@+id/game_3"
-            android:text="@string/identify_the_letter"
-            android:padding="6dp"
-            android:textSize="36sp"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"
-            android:background="@drawable/letter_view_border"
-            android:layout_margin="@dimen/cell_margin"/>
+            android:gravity="center">
 
-        <TextView
-            android:layout_width="@dimen/main_manu_view_width"
-            android:layout_height="@dimen/main_manu_view_hight"
-            android:gravity="center"
+
+            <com.orelhart.alefbet.GanTextView
+                android:layout_width="@dimen/main_manu_view_width"
+                android:layout_height="@dimen/main_manu_view_hight"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:id="@+id/game_1"
+                android:text="@string/identify_the_letter"
+                android:padding="6dp"
+                android:textSize="36sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:background="@drawable/letter_view_border"
+                android:layout_margin="@dimen/cell_margin" />
+
+            <com.orelhart.alefbet.GanTextView
+                android:layout_width="@dimen/main_manu_view_width"
+                android:layout_height="@dimen/main_manu_view_hight"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:id="@+id/game_2"
+                android:text="@string/letters_order"
+                android:padding="6dp"
+                android:textSize="36sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:background="@drawable/letter_view_border"
+                android:layout_margin="@dimen/cell_margin" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:layout_gravity="center"
-            android:layout_weight="1"
-            android:id="@+id/game_4"
-            android:text="@string/comming_soon"
-            android:padding="6dp"
-            android:textSize="36sp"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"
-            android:background="@drawable/letter_view_border"
-            android:layout_margin="@dimen/cell_margin"/>
+            android:gravity="center">
 
+
+            <com.orelhart.alefbet.GanTextView
+                android:layout_width="@dimen/main_manu_view_width"
+                android:layout_height="@dimen/main_manu_view_hight"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:id="@+id/game_3"
+                android:text="@string/comming_soon"
+                android:padding="6dp"
+                android:textSize="36sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:background="@drawable/letter_view_border"
+                android:layout_margin="@dimen/cell_margin" />
+
+            <com.orelhart.alefbet.GanTextView
+                android:layout_width="@dimen/main_manu_view_width"
+                android:layout_height="@dimen/main_manu_view_hight"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:id="@+id/game_4"
+                android:text="@string/comming_soon"
+                android:padding="6dp"
+                android:textSize="36sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:background="@drawable/letter_view_border"
+                android:layout_margin="@dimen/cell_margin" />
 
 
         </LinearLayout>
 
 
- </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="@drawable/letter_view_border"
+        android:id="@+id/hiden_linear_layout"
+        android:layout_gravity="center">
+
+        <com.orelhart.alefbet.GanTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/prefrences_text_view"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="6dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:layout_margin="16dp"
+            android:text="@string/prefrences_text" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+
+            <com.orelhart.alefbet.GanTextView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:id="@+id/mode_easy"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="6dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_margin="16dp"
+                android:text="@string/easy_mode"
+                android:background="@drawable/letter_view_border" />
+
+            <com.orelhart.alefbet.GanTextView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:id="@+id/mode_hard"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="6dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_margin="16dp"
+                android:text="@string/hard_mode"
+                android:background="@drawable/letter_view_border" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</FrameLayout>

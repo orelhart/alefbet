@@ -7,4 +7,19 @@
     <string name="letters_order">סדר את האותיות</string>
     <string name="identify_the_letter"> מצא את האות</string>
     <string name="comming_soon"> בקרוב</string>
+    <string name="title_letters_order"> זהה את האות</string>
+    <string name="title_identify_letter">סדר את האותיות</string>
+    <string name="title_find_the_mistake"> מצא את הטעות</string>
+    <string name="title_main_menu">אלף בית</string>
+    <string name="sound_button">שמע שוב</string>
+    <string name="correct">נכון מאוד!</string>
+    <string name="perfect">מצויין!</string>
+    <string name="good_job">כל הכבוד!</string>
+    <string name="try_again">נסה שוב</string>
+    <string name="prefrences_text">בחר דרגת קושי</string>
+    <string name="easy_mode">קל</string>
+    <string name="hard_mode">קשה</string>
+    <string name="play_again_botton">נגן</string>
+
+
 </resources>

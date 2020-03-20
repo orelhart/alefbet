@@ -8,6 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.GridLayout;
 
 import androidx.annotation.RequiresApi;
+import androidx.core.content.ContextCompat;
 
 import com.orelhart.alefbet.data.AlphaBet;
 
@@ -45,6 +46,7 @@ public class LetterGridLayout extends GridLayout {
             v.setLetter(alphabet.getLetter(i));
             v.setLetterVisibility(false);
             v.setRotationY(180);
+            v.setTextColor(ContextCompat.getColor(context, alphabet.getLetter(i).getmColorResource()));
             mLetterViewsArray[i] = v;
 
             int cellMargin = (int) getResources().getDimension(R.dimen.cell_margin);

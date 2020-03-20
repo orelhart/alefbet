@@ -3,12 +3,10 @@ package com.orelhart.alefbet;
 import android.content.Context;
 import android.util.AttributeSet;
 
-import androidx.appcompat.widget.AppCompatTextView;
-
 import com.orelhart.alefbet.data.Letter;
 
 //public class LetterView extends androidx.appcompat.widget.AppCompatTextView {
-public class LetterView extends AppCompatTextView {
+public class LetterView extends GanTextView {
 
 
     private boolean hint;

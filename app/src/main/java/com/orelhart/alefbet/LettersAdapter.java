@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.orelhart.alefbet.data.AlphaBet;
@@ -29,6 +30,7 @@ public class LettersAdapter extends RecyclerView.Adapter<LettersAdapter.LettersV
                 .inflate(R.layout.letter_view, parent, false);
         letterView.setRotationY(180);
 
+
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +50,7 @@ public class LettersAdapter extends RecyclerView.Adapter<LettersAdapter.LettersV
         Letter currentLetter = mAlphabet.getLetter(position);
         LetterView letterView = (LetterView) holder.itemView;
         letterView.setLetter(currentLetter);
+        letterView.setTextColor(ContextCompat.getColor(letterView.getContext(),currentLetter.getmColorResource()));
 
     }
 

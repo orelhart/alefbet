@@ -1,12 +1,15 @@
 package com.orelhart.alefbet;
 
 import android.animation.ObjectAnimator;
+import android.annotation.TargetApi;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 
 import androidx.appcompat.app.AlertDialog;
@@ -56,23 +59,22 @@ public class LettersOrderActivity extends AppCompatActivity implements LetterVie
 
     }
 
-    public void onHintClick(){
+    public void onHintClick() {
 
         int letterViewArryLength = letterGridLayout.getmLetterViewsArray().length;
         LetterView letterView;
 
-        for (int i = index ; i<letterViewArryLength ; i++){
-            letterView= letterGridLayout.getGridLayoutLetterViewByIndex(i);
+        for (int i = index; i < letterViewArryLength; i++) {
+            letterView = letterGridLayout.getGridLayoutLetterViewByIndex(i);
             letterView.setHint(!letterView.isHint());
         }
 
-        for (int i=index ; i<letterViewArryLength; i++){
-            letterView= letterGridLayout.getGridLayoutLetterViewByIndex(i);
-            if(letterView.isHint()){
+        for (int i = index; i < letterViewArryLength; i++) {
+            letterView = letterGridLayout.getGridLayoutLetterViewByIndex(i);
+            if (letterView.isHint()) {
                 letterView.setLetterVisibility(true);
                 letterView.setHint(true);
-            }
-            else{
+            } else {
                 letterView.setLetterVisibility(false);
                 letterView.setHint(false);
             }
@@ -82,12 +84,12 @@ public class LettersOrderActivity extends AppCompatActivity implements LetterVie
     }
 
     @Override
-    public void onClickRecyclerView(LetterView clickedLetter){
+    public void onClickRecyclerView(LetterView clickedLetter) {
 
 
-        if (clickedLetter.getLetter().getmSerialNumber() == index){
+        if (clickedLetter.getLetter().getmSerialNumber() == index) {
 
-            LetterView letterView =letterGridLayout.getGridLayoutLetterViewByIndex(index);
+            LetterView letterView = letterGridLayout.getGridLayoutLetterViewByIndex(index);
             letterView.setLetterVisibility(true);
             letterView.setHint(false);
 
@@ -102,14 +104,13 @@ public class LettersOrderActivity extends AppCompatActivity implements LetterVie
             mAdapter.notifyItemRangeChanged(indexInSuffeledList, mShuffledAlphabet.getAlphabetSize());
 
 
-            if(mAdapter.getItemCount() == 0){
+            if (mAdapter.getItemCount() == 0) {
                 showAlertDialog();
             }
             index++;
 
-        }
-        else {
-            ObjectAnimator transAnimation = ObjectAnimator.ofFloat(clickedLetter,"translationX",-10,10,-10,10,-10,10,0);
+        } else {
+            ObjectAnimator transAnimation = ObjectAnimator.ofFloat(clickedLetter, "translationX", -10, 10, -10, 10, -10, 10, 0);
             transAnimation.setDuration(440);
             transAnimation.start();
         }
@@ -144,7 +145,7 @@ public class LettersOrderActivity extends AppCompatActivity implements LetterVie
         builder.setPositiveButton(R.string.alert_dialog_button, new Dialog.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Intent intent = new Intent(LettersOrderActivity.this, MainActivity.class);
+                Intent intent = new Intent(LettersOrderActivity.this, LettersOrderActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -154,5 +155,9 @@ public class LettersOrderActivity extends AppCompatActivity implements LetterVie
         dialog.show();
     }
 
-    
 }
+
+
+
+    
+

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/backround_test"
+        android:scaleType="centerCrop"
+        tools:ignore="ContentDescription" />
+
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+
+
+            <com.orelhart.alefbet.LetterView
+                android:layout_width="90dp"
+                android:layout_height="150dp"
+                android:id="@+id/letter_no_1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="6dp"
+                android:textSize="72sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:background="@drawable/letter_view_border"
+                android:layout_margin="16dp"/>
+
+            <com.orelhart.alefbet.LetterView
+                android:layout_width="90dp"
+                android:layout_height="150dp"
+                android:id="@+id/letter_no_2"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="6dp"
+                android:textSize="72sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:background="@drawable/letter_view_border"
+                android:layout_margin="16dp"/>
+
+            <com.orelhart.alefbet.LetterView
+                android:layout_width="90dp"
+                android:layout_height="150dp"
+                android:id="@+id/letter_no_3"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="6dp"
+                android:textSize="72sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:background="@drawable/letter_view_border"
+                android:layout_margin="16dp"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:id="@+id/hard_mode_linear_layout">
+
+
+
+            <com.orelhart.alefbet.LetterView
+                android:layout_width="90dp"
+                android:layout_height="150dp"
+                android:id="@+id/letter_no_4"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="6dp"
+                android:textSize="72sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:background="@drawable/letter_view_border"
+                android:layout_margin="16dp"/>
+
+            <com.orelhart.alefbet.LetterView
+                android:layout_width="90dp"
+                android:layout_height="150dp"
+                android:id="@+id/letter_no_5"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="6dp"
+                android:textSize="72sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:background="@drawable/letter_view_border"
+                android:layout_margin="16dp"/>
+
+            <com.orelhart.alefbet.LetterView
+                android:layout_width="90dp"
+                android:layout_height="150dp"
+                android:id="@+id/letter_no_6"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="6dp"
+                android:textSize="72sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:background="@drawable/letter_view_border"
+                android:layout_margin="16dp"/>
+
+
+        </LinearLayout>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/play_again_botton"
+            android:layout_gravity="center"
+            android:layout_marginTop="72dp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:padding="6dp"
+            android:textSize="36sp"
+            android:id="@+id/play_again_view"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+</FrameLayout>
