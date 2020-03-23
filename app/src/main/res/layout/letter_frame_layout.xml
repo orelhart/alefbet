@@ -13,9 +13,9 @@
         android:id="@+id/letter_view_in_frame"
         android:padding="6dp"
         android:layout_gravity="center"
-        android:layout_width="@dimen/lettter_width"
-        android:layout_height="@dimen/lettter_hight"
-        android:textSize="48sp"
+        android:layout_width="@dimen/letter_view_width"
+        android:layout_height="@dimen/letter_view_hight"
+        android:textSize="@dimen/letter_view_text_size"
         android:gravity="center"
         android:textColor="@android:color/black"
         android:textStyle="bold" />

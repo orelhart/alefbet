@@ -5,12 +5,15 @@ import android.annotation.TargetApi;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
+import android.view.animation.GridLayoutAnimationController;
+import android.view.animation.LayoutAnimationController;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +27,7 @@ public class LettersOrderActivity extends AppCompatActivity implements LetterVie
     LetterGridLayout letterGridLayout;
     AlphaBet mShuffledAlphabet;
     RecyclerView.Adapter mAdapter;
+    MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,7 @@ public class LettersOrderActivity extends AppCompatActivity implements LetterVie
         setContentView(R.layout.activity_letters_order);
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
+
         AlphaBet mAlphabet = AlphaBet.getHebrew();
         mShuffledAlphabet = AlphaBet.getHebrew();
         mShuffledAlphabet.shuffleLettersOrder();
@@ -101,7 +106,17 @@ public class LettersOrderActivity extends AppCompatActivity implements LetterVie
 
             int indexInSuffeledList = mShuffledAlphabet.removeLetterFromList(index);
             mAdapter.notifyItemRemoved(indexInSuffeledList);
-            mAdapter.notifyItemRangeChanged(indexInSuffeledList, mShuffledAlphabet.getAlphabetSize());
+
+
+            if (mediaPlayer != null) {
+                mediaPlayer.stop();
+                if (!mediaPlayer.isPlaying()) {
+                    mediaPlayer.release();
+                }
+            }
+            mediaPlayer = MediaPlayer.create(this, letterView.getLetter().getmSoundResourceFile());
+            mediaPlayer.start();
+
 
 
             if (mAdapter.getItemCount() == 0) {

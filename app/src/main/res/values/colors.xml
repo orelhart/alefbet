@@ -26,5 +26,6 @@
     <color name="color20">#FF1744</color>
     <color name="color21">#00B0FF</color>
     <color name="color22">#FFAB40</color>
-
+    <color name="colorVolumeButton">#4DC3E1</color>
+    <color name="colorVolumeButtonPaused">#868585</color>
 </resources>

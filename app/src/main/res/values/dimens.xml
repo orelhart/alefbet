@@ -2,12 +2,34 @@
 <resources>
     <dimen name="grid_horizontal_spacing">24dp</dimen>
     <dimen name="grid_vertical_spacing">10dp</dimen>
-    <dimen name="lettter_width">60dp</dimen>
-    <dimen name="lettter_hight">100dp</dimen>
+
+    <dimen name="letter_view_width">60dp</dimen>
+    <dimen name="letter_view_hight">100dp</dimen>
+    <dimen name="letter_view_padding">6dp</dimen>
+    <dimen name="letter_view_text_size">48sp</dimen>
+
     <integer name="letters_in_row">5</integer>
     <dimen name="cell_margin">10dp</dimen>
-    <dimen name="main_manu_view_width">140dp</dimen>
-    <dimen name="main_manu_view_hight">200dp</dimen>
+
+
+    <dimen name="main_menu_view_width">240dp</dimen>
+    <dimen name="main_menu_view_hight">140dp</dimen>
+
+    <dimen name="level_button_width">90dp</dimen>
+    <dimen name="level_button_height">60dp</dimen>
+    <dimen name="level_button_text_size">24sp</dimen>
+    <dimen name="level_button_margin">16dp</dimen>
+    <dimen name="level_button_padding">6dp</dimen>
+
+    <dimen name="main_menu_cell_padding">6dp</dimen>
+    <dimen name="main_menu_text_size">36sp</dimen>
+
+    <dimen name="identify_letter_width">90dp</dimen>
+    <dimen name="identify_letter_height">150dp</dimen>
+    <dimen name="identify_letter_padding">6dp</dimen>
+    <dimen name="identify_letter_text_size">72sp</dimen>
+    <dimen name="identify_letter_margin">16dp</dimen>
+
 
 
 </resources>

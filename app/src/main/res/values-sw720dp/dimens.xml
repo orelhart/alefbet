@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer name="letters_in_row">7</integer>
+
+
+    <dimen name="level_button_width">180dp</dimen>
+    <dimen name="level_button_height">120dp</dimen>
+    <dimen name="level_button_text_size">48sp</dimen>
+    <dimen name="level_button_margin">24dp</dimen>
+    <dimen name="level_button_padding">10dp</dimen>
+
+
+    <dimen name="main_menu_view_width">380dp</dimen>
+    <dimen name="main_menu_view_hight">260dp</dimen>
+
+    <dimen name="main_menu_cell_padding">10dp</dimen>
+    <dimen name="main_menu_text_size">60sp</dimen>
+
+    <dimen name="identify_letter_width">160dp</dimen>
+    <dimen name="identify_letter_height">240dp</dimen>
+    <dimen name="identify_letter_padding">10dp</dimen>
+    <dimen name="identify_letter_text_size">120sp</dimen>
+    <dimen name="identify_letter_margin">36dp</dimen>
+
+    <dimen name="letter_view_width">100dp</dimen>
+    <dimen name="letter_view_hight">160dp</dimen>
+    <dimen name="letter_view_padding">6dp</dimen>
+    <dimen name="letter_view_text_size">80sp</dimen>
+
 </resources>

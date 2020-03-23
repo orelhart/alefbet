@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.orelhart.alefbet.data.AlphaBet;
@@ -34,7 +35,6 @@ public class IdentifyLetterActivity extends AppCompatActivity {
         Intent intent = getIntent();
         mMode = intent.getIntExtra(MainActivity.MODE, MainActivity.MODE_EASY);
         setContentView(R.layout.activity_identify_letter);
-        forceRTLIfSupported();
         init();
 
     }
@@ -45,13 +45,6 @@ public class IdentifyLetterActivity extends AppCompatActivity {
         return viewList.get(mCurrentLetterId).getLetter().getmSerialNumber() == letterView.getLetter().getmSerialNumber();
     }
 
-
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
-    private void forceRTLIfSupported() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
-        }
-    }
 
     private int getRendomToast() {
 
@@ -113,6 +106,11 @@ public class IdentifyLetterActivity extends AppCompatActivity {
         viewLetter2.setLetter(mShuffledAlphabet.getLetter(1));
         viewLetter3.setLetter(mShuffledAlphabet.getLetter(2));
 
+        viewLetter1.setTextColor(ContextCompat.getColor(this, mShuffledAlphabet.getLetter(0).getmColorResource()));
+        viewLetter2.setTextColor(ContextCompat.getColor(this, mShuffledAlphabet.getLetter(1).getmColorResource()));
+        viewLetter3.setTextColor(ContextCompat.getColor(this, mShuffledAlphabet.getLetter(2).getmColorResource()));
+
+
 
         if (mMode == MainActivity.MODE_HARD) {
             LinearLayout hardModeLinearLayout = findViewById(R.id.hard_mode_linear_layout);
@@ -126,6 +124,12 @@ public class IdentifyLetterActivity extends AppCompatActivity {
             viewLetter4.setLetter(mShuffledAlphabet.getLetter(3));
             viewLetter5.setLetter(mShuffledAlphabet.getLetter(4));
             viewLetter6.setLetter(mShuffledAlphabet.getLetter(5));
+
+            viewLetter4.setTextColor(ContextCompat.getColor(this, mShuffledAlphabet.getLetter(3).getmColorResource()));
+            viewLetter5.setTextColor(ContextCompat.getColor(this, mShuffledAlphabet.getLetter(4).getmColorResource()));
+            viewLetter6.setTextColor(ContextCompat.getColor(this, mShuffledAlphabet.getLetter(5).getmColorResource()));
+
+
 
 
         }

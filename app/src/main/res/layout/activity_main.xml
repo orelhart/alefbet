@@ -1,167 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/backround_test"
         android:scaleType="centerCrop"
+        android:src="@drawable/backround_test"
         tools:ignore="ContentDescription" />
 
+
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/linear_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:id="@+id/linear_layout">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center">
-
-
-            <com.orelhart.alefbet.GanTextView
-                android:layout_width="@dimen/main_manu_view_width"
-                android:layout_height="@dimen/main_manu_view_hight"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:id="@+id/game_1"
-                android:text="@string/identify_the_letter"
-                android:padding="6dp"
-                android:textSize="36sp"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:background="@drawable/letter_view_border"
-                android:layout_margin="@dimen/cell_margin" />
-
-            <com.orelhart.alefbet.GanTextView
-                android:layout_width="@dimen/main_manu_view_width"
-                android:layout_height="@dimen/main_manu_view_hight"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:id="@+id/game_2"
-                android:text="@string/letters_order"
-                android:padding="6dp"
-                android:textSize="36sp"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:background="@drawable/letter_view_border"
-                android:layout_margin="@dimen/cell_margin" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center">
-
-
-            <com.orelhart.alefbet.GanTextView
-                android:layout_width="@dimen/main_manu_view_width"
-                android:layout_height="@dimen/main_manu_view_hight"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:id="@+id/game_3"
-                android:text="@string/comming_soon"
-                android:padding="6dp"
-                android:textSize="36sp"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:background="@drawable/letter_view_border"
-                android:layout_margin="@dimen/cell_margin" />
-
-            <com.orelhart.alefbet.GanTextView
-                android:layout_width="@dimen/main_manu_view_width"
-                android:layout_height="@dimen/main_manu_view_hight"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:id="@+id/game_4"
-                android:text="@string/comming_soon"
-                android:padding="6dp"
-                android:textSize="36sp"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:background="@drawable/letter_view_border"
-                android:layout_margin="@dimen/cell_margin" />
-
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="gone"
-        android:background="@drawable/letter_view_border"
-        android:id="@+id/hiden_linear_layout"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
 
         <com.orelhart.alefbet.GanTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/prefrences_text_view"
+            android:id="@+id/game_1"
+            android:layout_width="@dimen/main_menu_view_width"
+            android:layout_height="@dimen/main_menu_view_hight"
             android:layout_gravity="center"
+            android:layout_margin="@dimen/cell_margin"
+            android:layout_weight="1"
+            android:background="@drawable/letter_view_no_border_opacity"
             android:gravity="center"
-            android:padding="6dp"
-            android:textSize="16sp"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"
-            android:layout_margin="16dp"
-            android:text="@string/prefrences_text" />
+            android:padding="@dimen/main_menu_cell_padding"
+            android:stateListAnimator="@animator/button_animation"
+            android:text="@string/identify_the_letter"
+            android:textColor="@color/color10"
+            android:textSize="@dimen/main_menu_text_size"
+            android:textStyle="bold" />
+
+        <com.orelhart.alefbet.GanTextView
+            android:id="@+id/game_2"
+            android:layout_width="@dimen/main_menu_view_width"
+            android:layout_height="@dimen/main_menu_view_hight"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/cell_margin"
+            android:layout_weight="1"
+            android:background="@drawable/letter_view_no_border_opacity"
+            android:gravity="center"
+            android:padding="@dimen/main_menu_cell_padding"
+            android:stateListAnimator="@animator/button_animation"
+            android:text="@string/letters_order"
+            android:textColor="@color/color2"
+            android:textSize="@dimen/main_menu_text_size"
+            android:textStyle="bold" />
+
+
+        <com.orelhart.alefbet.GanTextView
+            android:id="@+id/game_3"
+            android:layout_width="@dimen/main_menu_view_width"
+            android:layout_height="@dimen/main_menu_view_hight"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/cell_margin"
+            android:layout_weight="1"
+            android:background="@drawable/letter_view_no_border_opacity"
+            android:gravity="center"
+            android:padding="@dimen/main_menu_cell_padding"
+            android:stateListAnimator="@animator/button_animation"
+            android:text="@string/comming_soon"
+            android:textColor="@color/color1"
+            android:textSize="@dimen/main_menu_text_size"
+            android:textStyle="bold" />
+
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="start"
             android:orientation="horizontal"
-            android:layout_gravity="center">
+            android:padding="24dp">
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/letter_view_no_border_opacity"
+                android:src="@drawable/round_volume_up_black_18"
+                android:tint="@color/colorVolumeButton"
+                android:id="@+id/sound_button"
+                android:stateListAnimator="@animator/button_animation"/>
 
-            <com.orelhart.alefbet.GanTextView
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:id="@+id/mode_easy"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:padding="6dp"
-                android:textSize="16sp"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:layout_margin="16dp"
-                android:text="@string/easy_mode"
-                android:background="@drawable/letter_view_border" />
-
-            <com.orelhart.alefbet.GanTextView
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:id="@+id/mode_hard"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:padding="6dp"
-                android:textSize="16sp"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:layout_margin="16dp"
-                android:text="@string/hard_mode"
-                android:background="@drawable/letter_view_border" />
         </LinearLayout>
 
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/hiden_linear_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/letter_view_no_border_opacity"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.orelhart.alefbet.GanTextView
+            android:id="@+id/prefrences_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/level_button_margin"
+            android:gravity="center"
+            android:padding="@dimen/level_button_padding"
+            android:text="@string/prefrences_text"
+            android:textColor="@color/color7"
+            android:textSize="@dimen/level_button_text_size"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+
+            <com.orelhart.alefbet.GanTextView
+                android:id="@+id/mode_easy"
+                android:layout_width="@dimen/level_button_width"
+                android:layout_height="@dimen/level_button_height"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/level_button_margin"
+                android:background="@drawable/button_view_full_transperent_border"
+                android:gravity="center"
+                android:padding="@dimen/level_button_padding"
+                android:stateListAnimator="@animator/button_animation"
+                android:text="@string/easy_mode"
+                android:textColor="@color/color6"
+                android:textSize="@dimen/level_button_text_size"
+                android:textStyle="bold" />
+
+            <com.orelhart.alefbet.GanTextView
+                android:id="@+id/mode_hard"
+                android:layout_width="@dimen/level_button_width"
+                android:layout_height="@dimen/level_button_height"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/level_button_margin"
+                android:background="@drawable/button_view_full_transperent_border"
+                android:gravity="center"
+                android:padding="@dimen/level_button_padding"
+                android:stateListAnimator="@animator/button_animation"
+                android:text="@string/hard_mode"
+                android:textColor="@color/color9"
+                android:textSize="@dimen/level_button_text_size"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
 
 </FrameLayout>
