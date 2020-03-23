@@ -27,4 +27,14 @@
     <dimen name="letter_view_padding">6dp</dimen>
     <dimen name="letter_view_text_size">80sp</dimen>
 
+
+    <dimen name="button_width">85dp</dimen>
+    <dimen name="button_height">85dp</dimen>
+
+
+    <dimen name="play_button_button_width">100dp</dimen>
+    <dimen name="play_button_button_height">100dp</dimen>
+    <dimen name="play_again_button_margin">100dp</dimen>
+
+
 </resources>

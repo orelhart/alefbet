@@ -2,151 +2,140 @@
 
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/backround_test"
         android:scaleType="centerCrop"
+        android:src="@drawable/bg"
         tools:ignore="ContentDescription" />
 
 
-
-
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center">
-
-
+        android:gravity="center"
+        android:orientation="vertical">
 
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
-
+            android:layout_gravity="center"
+            android:orientation="horizontal">
 
 
             <com.orelhart.alefbet.LetterView
-                android:layout_width="@dimen/identify_letter_width"
-                android:layout_height="@dimen/identify_letter_height"
                 android:id="@+id/letter_no_1"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:padding="@dimen/identify_letter_padding"
-                android:textSize="@dimen/identify_letter_text_size"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:background="@drawable/letter_view_no_border_opacity"
-                android:layout_margin="@dimen/identify_letter_margin"/>
-
-            <com.orelhart.alefbet.LetterView
                 android:layout_width="@dimen/identify_letter_width"
                 android:layout_height="@dimen/identify_letter_height"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/identify_letter_margin"
+                android:background="@drawable/letter_view_no_border_opacity"
+                android:gravity="center"
+                android:padding="@dimen/identify_letter_padding"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/identify_letter_text_size"
+                android:textStyle="bold" />
+
+            <com.orelhart.alefbet.LetterView
                 android:id="@+id/letter_no_2"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:padding="@dimen/identify_letter_padding"
-                android:textSize="@dimen/identify_letter_text_size"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:background="@drawable/letter_view_no_border_opacity"
-                android:layout_margin="@dimen/identify_letter_margin"/>
-
-            <com.orelhart.alefbet.LetterView
                 android:layout_width="@dimen/identify_letter_width"
                 android:layout_height="@dimen/identify_letter_height"
-                android:id="@+id/letter_no_3"
                 android:layout_gravity="center"
+                android:layout_margin="@dimen/identify_letter_margin"
+                android:background="@drawable/letter_view_no_border_opacity"
                 android:gravity="center"
                 android:padding="@dimen/identify_letter_padding"
-                android:textSize="@dimen/identify_letter_text_size"
                 android:textColor="@android:color/black"
-                android:textStyle="bold"
+                android:textSize="@dimen/identify_letter_text_size"
+                android:textStyle="bold" />
+
+            <com.orelhart.alefbet.LetterView
+                android:id="@+id/letter_no_3"
+                android:layout_width="@dimen/identify_letter_width"
+                android:layout_height="@dimen/identify_letter_height"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/identify_letter_margin"
                 android:background="@drawable/letter_view_no_border_opacity"
-                android:layout_margin="@dimen/identify_letter_margin"/>
+                android:gravity="center"
+                android:padding="@dimen/identify_letter_padding"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/identify_letter_text_size"
+                android:textStyle="bold" />
 
 
         </LinearLayout>
 
 
         <LinearLayout
+            android:id="@+id/hard_mode_linear_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center"
-            android:visibility="gone"
-            android:id="@+id/hard_mode_linear_layout">
-
+            android:orientation="horizontal"
+            android:visibility="gone">
 
 
             <com.orelhart.alefbet.LetterView
-                android:layout_width="@dimen/identify_letter_width"
-                android:layout_height="@dimen/identify_letter_height"
                 android:id="@+id/letter_no_4"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:padding="@dimen/identify_letter_padding"
-                android:textSize="@dimen/identify_letter_text_size"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:background="@drawable/letter_view_no_border_opacity"
-                android:layout_margin="@dimen/identify_letter_margin"/>
-
-            <com.orelhart.alefbet.LetterView
                 android:layout_width="@dimen/identify_letter_width"
                 android:layout_height="@dimen/identify_letter_height"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/identify_letter_margin"
+                android:background="@drawable/letter_view_no_border_opacity"
+                android:gravity="center"
+                android:padding="@dimen/identify_letter_padding"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/identify_letter_text_size"
+                android:textStyle="bold" />
+
+            <com.orelhart.alefbet.LetterView
                 android:id="@+id/letter_no_5"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:padding="@dimen/identify_letter_padding"
-                android:textSize="@dimen/identify_letter_text_size"
-                android:textColor="@android:color/black"
-                android:textStyle="bold"
-                android:background="@drawable/letter_view_no_border_opacity"
-                android:layout_margin="@dimen/identify_letter_margin"/>
-
-            <com.orelhart.alefbet.LetterView
                 android:layout_width="@dimen/identify_letter_width"
                 android:layout_height="@dimen/identify_letter_height"
-                android:id="@+id/letter_no_6"
                 android:layout_gravity="center"
+                android:layout_margin="@dimen/identify_letter_margin"
+                android:background="@drawable/letter_view_no_border_opacity"
                 android:gravity="center"
                 android:padding="@dimen/identify_letter_padding"
-                android:textSize="@dimen/identify_letter_text_size"
                 android:textColor="@android:color/black"
-                android:textStyle="bold"
+                android:textSize="@dimen/identify_letter_text_size"
+                android:textStyle="bold" />
+
+            <com.orelhart.alefbet.LetterView
+                android:id="@+id/letter_no_6"
+                android:layout_width="@dimen/identify_letter_width"
+                android:layout_height="@dimen/identify_letter_height"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/identify_letter_margin"
                 android:background="@drawable/letter_view_no_border_opacity"
-                android:layout_margin="@dimen/identify_letter_margin"/>
+                android:gravity="center"
+                android:padding="@dimen/identify_letter_padding"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/identify_letter_text_size"
+                android:textStyle="bold" />
 
 
         </LinearLayout>
 
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/play_again_botton"
-            android:layout_gravity="center"
-            android:layout_marginTop="72dp"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"
-            android:padding="6dp"
-            android:textSize="36sp"
-            android:id="@+id/play_again_view"/>
-
-
+        <ImageView
+            android:id="@+id/play_again_button"
+            android:layout_width="@dimen/play_button_button_width"
+            android:layout_height="@dimen/play_button_button_height"
+            android:layout_marginTop="@dimen/play_again_button_margin"
+            android:background="@drawable/letter_view_no_border_opacity"
+            android:src="@drawable/round_play_arrow_black_18"
+            android:stateListAnimator="@animator/button_animation"
+            android:tint="@color/colorVolumeButton" />
 
 
     </LinearLayout>
-
 
 
 </FrameLayout>

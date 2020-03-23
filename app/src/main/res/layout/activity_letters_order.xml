@@ -8,15 +8,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/backround_test"
+        android:src="@drawable/bg"
         tools:ignore="ContentDescription" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".MainActivity"
-        android:paddingTop="24dp">
+        android:paddingTop="24dp"
+        tools:context=".MainActivity">
+
 
         <com.orelhart.alefbet.LetterGridLayout
 
@@ -45,6 +47,25 @@
 
 
         </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:orientation="horizontal"
+            android:padding="@dimen/hint_button_padding">
+
+            <ImageView
+                android:id="@+id/hint_button"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:background="@drawable/letter_view_no_border_opacity"
+                android:src="@drawable/round_help_black_18"
+                android:stateListAnimator="@animator/button_animation"
+                android:tint="@color/colorVolumeButton" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 </FrameLayout>

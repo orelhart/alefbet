@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/backround_test"
+        android:src="@drawable/bg"
         tools:ignore="ContentDescription" />
 
 
@@ -78,16 +78,16 @@
             android:layout_height="wrap_content"
             android:gravity="start"
             android:orientation="horizontal"
-            android:padding="24dp">
+            android:padding="@dimen/sound_button_padding">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/sound_button"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
                 android:background="@drawable/letter_view_no_border_opacity"
                 android:src="@drawable/round_volume_up_black_18"
-                android:tint="@color/colorVolumeButton"
-                android:id="@+id/sound_button"
-                android:stateListAnimator="@animator/button_animation"/>
+                android:stateListAnimator="@animator/button_animation"
+                android:tint="@color/colorVolumeButton" />
 
         </LinearLayout>
 
