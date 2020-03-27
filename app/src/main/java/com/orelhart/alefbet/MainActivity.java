@@ -198,12 +198,12 @@ public class MainActivity extends AppCompatActivity {
         break;
 
       case STATE_PREFERENCE:
-        reverceAnimation();
+        reverseAnimation();
         state = STATE_MAIN_MENU;
     }
   }
 
-  private void reverceAnimation() {
+  private void reverseAnimation() {
 
     hidenLinearLayout
         .animate()

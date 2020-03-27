@@ -1,10 +1,15 @@
 package com.orelhart.alefbet;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.animation.BounceInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -23,6 +28,7 @@ public class IdentifyLetterActivity extends AppCompatActivity {
   AlphaBet mShuffledAlphabet;
   int mCurrentLetterId;
   MediaPlayer mediaPlayer;
+  MediaPlayer soundEffectMediaPlayer;
   int mMode;
   LetterView viewLetter1;
   LetterView viewLetter2;
@@ -30,6 +36,7 @@ public class IdentifyLetterActivity extends AppCompatActivity {
   LetterView viewLetter4;
   LetterView viewLetter5;
   LetterView viewLetter6;
+
 
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,42 +54,6 @@ public class IdentifyLetterActivity extends AppCompatActivity {
         == letterView.getLetter().getmSerialNumber();
   }
 
-  private int getRendomToast() {
-
-    Random r = new Random();
-    int i = r.nextInt(3);
-    int src;
-
-    switch (i) {
-      case 0:
-        src = R.string.correct;
-        break;
-      case 1:
-        src = R.string.perfect;
-        break;
-      case 2:
-        src = R.string.good_job;
-        break;
-      default:
-        src = 0;
-    }
-    return src;
-  }
-
-  private void showSnackbar(Boolean isTrue, View v) {
-
-    String text;
-
-    if (isTrue) {
-      text = getString(getRendomToast());
-
-    } else {
-      text = getString(R.string.try_again);
-    }
-
-    final Snackbar snackbar = Snackbar.make(v, text, Snackbar.LENGTH_SHORT);
-    snackbar.show();
-  }
 
   private void init() {
 
@@ -154,23 +125,40 @@ public class IdentifyLetterActivity extends AppCompatActivity {
 
             if (isItTheCorrectLetter((LetterView) v)) {
 
-              showSnackbar(true, v);
+
+              AnimatorSet set =randomAnimation(v);
+              set.setDuration(1000);
+              set.start();
+
+              if (soundEffectMediaPlayer != null) {
+                soundEffectMediaPlayer.stop();
+                if (!soundEffectMediaPlayer.isPlaying()) {
+                  soundEffectMediaPlayer.release();
+                }
+              }
+              soundEffectMediaPlayer = MediaPlayer.create(IdentifyLetterActivity.this,getSoundEffectResource() );
+              soundEffectMediaPlayer.setVolume(1f, 1f);
+              soundEffectMediaPlayer.start();
+
+
 
               setLettersDisabled();
-              new Handler()
-                  .postDelayed(
-                      new Runnable() {
-                        @Override
-                        public void run() {
-                          init();
-                          setLettersEnabled();
-                        }
-                      },
-                      1500);
 
+              set.addListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                  init();
+                  setLettersEnabled();
+                }
+              });
+//
             } else {
 
-              showSnackbar(false, v);
+
+                ObjectAnimator transAnimation =
+                        ObjectAnimator.ofFloat(v, "translationX", -10, 10, -10, 10, -10, 10, 0);
+                transAnimation.setDuration(440);
+                transAnimation.start();
             }
           }
         };
@@ -194,6 +182,78 @@ public class IdentifyLetterActivity extends AppCompatActivity {
             mediaPlayer.start();
           }
         });
+  }
+
+  private int getSoundEffectResource() {
+
+    Random r = new Random();
+    int i = r.nextInt(2);
+    int resource;
+
+    switch (i){
+      case 0:
+        resource = R.raw.positive_sound;
+        break;
+
+      case 1:
+        resource = R.raw.positive_sound_2;
+        break;
+
+        default:
+          resource = R.raw.positive_sound_2;
+    }
+
+    return resource;
+
+  }
+
+
+  private AnimatorSet randomAnimation(View v){
+
+    ObjectAnimator scaleAnimationX;
+    ObjectAnimator scaleAnimationY;
+    ObjectAnimator rotationAnimation;
+    ObjectAnimator transAnumationX;
+    ObjectAnimator transAnumationY;
+
+    AnimatorSet set = new AnimatorSet();
+    Random r = new Random();
+    int i = r.nextInt(3);
+
+    switch (i){
+
+      case 0:
+
+        scaleAnimationX =
+                ObjectAnimator.ofFloat(v, "scaleX",  1f, 1.4f, 1f);
+        scaleAnimationY =
+                ObjectAnimator.ofFloat(v, "scaleY",  1f, 1.4f, 1f);
+        rotationAnimation =
+                ObjectAnimator.ofFloat(v, "rotation", 0, 50, 0);
+        set.playTogether(scaleAnimationX, scaleAnimationY, rotationAnimation);
+        break;
+
+      case 1:
+
+        rotationAnimation =
+                ObjectAnimator.ofFloat(v, "rotation", 0, 360, 720);
+        set.playTogether(rotationAnimation);
+        break;
+
+
+      case 2:
+
+        transAnumationX =
+                ObjectAnimator.ofFloat(v, "translationX", 0, 30, 0, -30, 0, 30, 0, -30, 0);
+        transAnumationY =
+                ObjectAnimator.ofFloat(v, "translationY", 0, -30, 0, -30, 0, -30, 0, -30, 0  );
+
+        set.playTogether(transAnumationX, transAnumationY );
+        break;
+    }
+
+    return set;
+
   }
 
   private void setLettersDisabled() {
@@ -224,9 +284,4 @@ public class IdentifyLetterActivity extends AppCompatActivity {
     }
   }
 
-  @Override
-  public void onBackPressed() {
-
-    super.onBackPressed();
-  }
 }

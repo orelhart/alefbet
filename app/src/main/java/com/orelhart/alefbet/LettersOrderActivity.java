@@ -141,22 +141,6 @@ public class LettersOrderActivity extends AppCompatActivity implements LetterVie
     }
   }
 
-  @Override
-  public boolean onCreateOptionsMenu(Menu menu) {
-    getMenuInflater().inflate(R.menu.mymenu, menu);
-    return super.onCreateOptionsMenu(menu);
-  }
-
-  @Override
-  public boolean onOptionsItemSelected(MenuItem item) {
-    int id = item.getItemId();
-
-    if (id == R.id.mybutton) {
-      onHintClick();
-    }
-    return super.onOptionsItemSelected(item);
-  }
-
   public void showAlertDialog() {
 
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
