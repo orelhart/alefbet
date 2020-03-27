@@ -67,7 +67,7 @@
             android:gravity="center"
             android:padding="@dimen/main_menu_cell_padding"
             android:stateListAnimator="@animator/button_animation"
-            android:text="@string/comming_soon"
+            android:text="@string/wrong_letter"
             android:textColor="@color/color1"
             android:textSize="@dimen/main_menu_text_size"
             android:textStyle="bold" />

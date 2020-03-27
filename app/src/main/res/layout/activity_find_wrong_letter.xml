@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foregroundGravity="center"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg"
+        tools:ignore="ContentDescription" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:clipChildren="false"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/wrong_letter_linear_layout_padding_top">
+
+
+            <com.orelhart.alefbet.LetterView
+                android:id="@+id/sequence_letter_no_4"
+                android:layout_width="@dimen/find_wrong_letter_width"
+                android:layout_height="@dimen/find_wrong_letter_height"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/find_wrong_letter_margin"
+                android:background="@drawable/letter_view_no_border_opacity"
+                android:gravity="center"
+                android:padding="@dimen/find_wrong_letter_padding"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/find_wrong_letter_text_size"
+                android:textStyle="bold" />
+
+            <com.orelhart.alefbet.LetterView
+                android:id="@+id/sequence_letter_no_3"
+                android:layout_width="@dimen/find_wrong_letter_width"
+                android:layout_height="@dimen/find_wrong_letter_height"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/find_wrong_letter_margin"
+                android:background="@drawable/letter_view_no_border_opacity"
+                android:gravity="center"
+                android:padding="@dimen/find_wrong_letter_padding"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/find_wrong_letter_text_size"
+                android:textStyle="bold" />
+
+            <com.orelhart.alefbet.LetterView
+                android:id="@+id/sequence_letter_no_2"
+                android:layout_width="@dimen/find_wrong_letter_width"
+                android:layout_height="@dimen/find_wrong_letter_height"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/find_wrong_letter_margin"
+                android:background="@drawable/letter_view_no_border_opacity"
+                android:gravity="center"
+                android:padding="@dimen/find_wrong_letter_padding"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/find_wrong_letter_text_size"
+                android:textStyle="bold" />
+
+            <com.orelhart.alefbet.LetterView
+                android:id="@+id/sequence_letter_no_1"
+                android:layout_width="@dimen/find_wrong_letter_width"
+                android:layout_height="@dimen/find_wrong_letter_height"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/find_wrong_letter_margin"
+                android:background="@drawable/letter_view_no_border_opacity"
+                android:gravity="center"
+                android:padding="@dimen/find_wrong_letter_padding"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/find_wrong_letter_text_size"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/wrong_letter_hint_button_padding">
+
+            <ImageView
+                android:id="@+id/wrong_letter_hint_button"
+                android:layout_width="@dimen/wrong_letter_button_width"
+                android:layout_height="@dimen/wrong_letter_button_height"
+                android:background="@drawable/letter_view_no_border_opacity"
+                android:src="@drawable/round_help_black_18"
+                android:stateListAnimator="@animator/button_animation"
+                android:tint="@color/colorVolumeButton" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>

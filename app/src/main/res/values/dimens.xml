@@ -22,7 +22,7 @@
     <dimen name="level_button_padding">6dp</dimen>
 
     <dimen name="main_menu_cell_padding">6dp</dimen>
-    <dimen name="main_menu_text_size">36sp</dimen>
+    <dimen name="main_menu_text_size">30sp</dimen>
 
     <dimen name="identify_letter_width">90dp</dimen>
     <dimen name="identify_letter_height">150dp</dimen>
@@ -36,6 +36,17 @@
     <dimen name="play_button_button_width">60dp</dimen>
     <dimen name="play_button_button_height">60dp</dimen>
     <dimen name="play_again_button_margin">60dp</dimen>
+
+
+    <dimen name="find_wrong_letter_width">75dp</dimen>
+    <dimen name="find_wrong_letter_height">120dp</dimen>
+    <dimen name="find_wrong_letter_padding">6dp</dimen>
+    <dimen name="find_wrong_letter_text_size">72sp</dimen>
+    <dimen name="find_wrong_letter_margin">12dp</dimen>
+    <dimen name="wrong_letter_hint_button_padding">48dp</dimen>
+    <dimen name="wrong_letter_button_width">60dp</dimen>
+    <dimen name="wrong_letter_button_height">60dp</dimen>
+    <dimen name="wrong_letter_linear_layout_padding_top">80dp</dimen>
 
 
 </resources>

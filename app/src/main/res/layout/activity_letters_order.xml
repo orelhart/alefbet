@@ -56,7 +56,7 @@
             android:padding="@dimen/hint_button_padding">
 
             <ImageView
-                android:id="@+id/hint_button"
+                android:id="@+id/letters_order_hint_button"
                 android:layout_width="@dimen/button_width"
                 android:layout_height="@dimen/button_height"
                 android:background="@drawable/letter_view_no_border_opacity"

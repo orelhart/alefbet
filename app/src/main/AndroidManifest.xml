@@ -13,6 +13,7 @@
         android:screenOrientation="sensorPortrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +23,7 @@
         </activity>
         <activity android:name=".LettersOrderActivity" />
         <activity android:name=".IdentifyLetterActivity" />
+        <activity android:name=".FindWrongLetterActivity"/>
     </application>
 
 </manifest>

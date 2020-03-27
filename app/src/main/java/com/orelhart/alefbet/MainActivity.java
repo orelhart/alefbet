@@ -44,15 +44,24 @@ public class MainActivity extends AppCompatActivity {
 
     TextView lettersOrder = findViewById(R.id.game_2);
     TextView identifyTheLetter = findViewById(R.id.game_1);
+    TextView findWrongLetter = findViewById(R.id.game_3);
 
     View.OnClickListener onClickListener =
         new View.OnClickListener() {
           @Override
           public void onClick(View v) {
 
+            Intent intent;
+
             switch (v.getId()) {
+
+              case R.id.game_3:
+                intent = new Intent(MainActivity.this, FindWrongLetterActivity.class);
+                MainActivity.this.startActivity(intent);
+                break;
+
               case R.id.game_2:
-                Intent intent = new Intent(MainActivity.this, LettersOrderActivity.class);
+                intent = new Intent(MainActivity.this, LettersOrderActivity.class);
                 MainActivity.this.startActivity(intent);
                 break;
 
@@ -65,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         };
     lettersOrder.setOnClickListener(onClickListener);
     identifyTheLetter.setOnClickListener(onClickListener);
+    findWrongLetter.setOnClickListener(onClickListener);
 
     volumeButton = findViewById(R.id.sound_button);
 

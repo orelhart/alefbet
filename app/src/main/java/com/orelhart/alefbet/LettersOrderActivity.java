@@ -59,7 +59,7 @@ public class LettersOrderActivity extends AppCompatActivity implements LetterVie
     int mCellWidth = letterGridLayout.setGridLayoutParams(this, letterGridLayout, mAlphabet);
     letterGridLayout.setLetterViewsToGrid(this, mAlphabet, mCellWidth);
 
-    hintButton = findViewById(R.id.hint_button);
+    hintButton = findViewById(R.id.letters_order_hint_button);
     hintButton.setOnClickListener(
         new View.OnClickListener() {
           @Override

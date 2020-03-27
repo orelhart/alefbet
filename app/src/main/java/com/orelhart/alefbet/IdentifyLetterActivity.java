@@ -7,9 +7,7 @@ import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
-import android.view.animation.BounceInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -17,11 +15,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.google.android.material.snackbar.Snackbar;
 import com.orelhart.alefbet.data.AlphaBet;
 
 import java.util.LinkedList;
 import java.util.Random;
+
+import static com.orelhart.alefbet.EffectsUtils.getSoundEffectResource;
+import static com.orelhart.alefbet.EffectsUtils.randomWinAnimation;
 
 public class IdentifyLetterActivity extends AppCompatActivity {
   final LinkedList<LetterView> viewList = new LinkedList<>();
@@ -126,7 +126,7 @@ public class IdentifyLetterActivity extends AppCompatActivity {
             if (isItTheCorrectLetter((LetterView) v)) {
 
 
-              AnimatorSet set =randomAnimation(v);
+              AnimatorSet set =randomWinAnimation(v);
               set.setDuration(1000);
               set.start();
 
@@ -184,77 +184,8 @@ public class IdentifyLetterActivity extends AppCompatActivity {
         });
   }
 
-  private int getSoundEffectResource() {
-
-    Random r = new Random();
-    int i = r.nextInt(2);
-    int resource;
-
-    switch (i){
-      case 0:
-        resource = R.raw.positive_sound;
-        break;
-
-      case 1:
-        resource = R.raw.positive_sound_2;
-        break;
-
-        default:
-          resource = R.raw.positive_sound_2;
-    }
-
-    return resource;
-
-  }
 
 
-  private AnimatorSet randomAnimation(View v){
-
-    ObjectAnimator scaleAnimationX;
-    ObjectAnimator scaleAnimationY;
-    ObjectAnimator rotationAnimation;
-    ObjectAnimator transAnumationX;
-    ObjectAnimator transAnumationY;
-
-    AnimatorSet set = new AnimatorSet();
-    Random r = new Random();
-    int i = r.nextInt(3);
-
-    switch (i){
-
-      case 0:
-
-        scaleAnimationX =
-                ObjectAnimator.ofFloat(v, "scaleX",  1f, 1.4f, 1f);
-        scaleAnimationY =
-                ObjectAnimator.ofFloat(v, "scaleY",  1f, 1.4f, 1f);
-        rotationAnimation =
-                ObjectAnimator.ofFloat(v, "rotation", 0, 50, 0);
-        set.playTogether(scaleAnimationX, scaleAnimationY, rotationAnimation);
-        break;
-
-      case 1:
-
-        rotationAnimation =
-                ObjectAnimator.ofFloat(v, "rotation", 0, 360, 720);
-        set.playTogether(rotationAnimation);
-        break;
-
-
-      case 2:
-
-        transAnumationX =
-                ObjectAnimator.ofFloat(v, "translationX", 0, 30, 0, -30, 0, 30, 0, -30, 0);
-        transAnumationY =
-                ObjectAnimator.ofFloat(v, "translationY", 0, -30, 0, -30, 0, -30, 0, -30, 0  );
-
-        set.playTogether(transAnumationX, transAnumationY );
-        break;
-    }
-
-    return set;
-
-  }
 
   private void setLettersDisabled() {
 
