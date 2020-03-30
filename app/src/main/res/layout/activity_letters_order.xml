@@ -27,6 +27,7 @@
             android:layout_height="wrap_content"
             android:clipChildren="false"
             android:clipToPadding="false"
+            android:layoutDirection="ltr"
             android:orientation="horizontal"
             android:rotationY="180" />
 
@@ -42,6 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layoutDirection="ltr"
                 android:background="@android:color/transparent"
                 android:rotationY="180" />
 
@@ -52,6 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="start"
+            android:layoutDirection="ltr"
             android:orientation="horizontal"
             android:padding="@dimen/hint_button_padding">
 

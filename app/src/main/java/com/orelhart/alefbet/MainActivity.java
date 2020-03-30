@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
   public static final String MODE = "mode";
   private static final byte STATE_MAIN_MENU = 0;
   private static final byte STATE_PREFERENCE = 1;
-  private static final byte MUSIC_STOP = 0;
-  private static final byte MUSIC_PLAY = 1;
-  private final String BACKGROUND_MUSIC_STATE = "background_music_state";
+  public static final byte MUSIC_STOP = 0;
+  public static final byte MUSIC_PLAY = 1;
+  public static final String BACKGROUND_MUSIC_STATE = "background_music_state";
   LinearLayout linearLayout;
   LinearLayout hidenLinearLayout;
   ImageView volumeButton;

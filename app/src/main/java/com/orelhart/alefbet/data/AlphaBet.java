@@ -9,27 +9,27 @@ public class AlphaBet implements Cloneable {
 
   private static final int[] SOUND_RESOURCE = {
     R.raw.alef,
-    R.raw.bet,
+    R.raw.beit,
     R.raw.gimel,
-    R.raw.daled,
-    R.raw.hei,
+    R.raw.dalet,
+    R.raw.hey,
     R.raw.vav,
-    R.raw.zain,
+    R.raw.zayn,
     R.raw.het,
     R.raw.tet,
-    R.raw.yud,
+    R.raw.yod,
     R.raw.kaf,
     R.raw.lamed,
     R.raw.mem,
     R.raw.nun,
     R.raw.sameh,
-    R.raw.ain,
-    R.raw.pei,
-    R.raw.zadi,
-    R.raw.kuf,
-    R.raw.resh,
+    R.raw.ayin,
+    R.raw.pe,
+    R.raw.tzadi,
+    R.raw.kof,
+    R.raw.reish,
     R.raw.shin,
-    R.raw.taf
+    R.raw.tav
   };
 
   private static final int[] COLOR_RESURCE = {

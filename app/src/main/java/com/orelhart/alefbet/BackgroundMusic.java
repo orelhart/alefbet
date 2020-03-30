@@ -39,7 +39,7 @@ public class BackgroundMusic {
 
     mMediaPlayer = MediaPlayer.create(appContext, R.raw.background_music);
     mMediaPlayer.setLooping(true);
-    mMediaPlayer.setVolume(0.015f, 0.015f);
+    mMediaPlayer.setVolume(0.2f, 0.2f);
     mMediaPlayer.start();
   }
 }

@@ -1,6 +1,7 @@
 package com.orelhart.alefbet;
 
 import android.app.Application;
+import android.preference.PreferenceManager;
 
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
@@ -22,6 +23,11 @@ public class MyApplication extends Application implements LifecycleObserver {
 
   @OnLifecycleEvent(Lifecycle.Event.ON_START)
   public void onAppForegrounded() {
-    BackgroundMusic.get(getApplicationContext()).resume();
+
+    if (PreferenceManager.getDefaultSharedPreferences(this)
+            .getInt(MainActivity.BACKGROUND_MUSIC_STATE, MainActivity.MUSIC_PLAY)
+        == MainActivity.MUSIC_PLAY) {
+      BackgroundMusic.get(getApplicationContext()).resume();
+    }
   }
 }

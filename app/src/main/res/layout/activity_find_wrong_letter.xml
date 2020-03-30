@@ -33,6 +33,7 @@
             android:layout_gravity="center"
             android:clipChildren="false"
             android:clipToPadding="false"
+            android:layoutDirection="ltr"
             android:orientation="horizontal"
             android:paddingTop="@dimen/wrong_letter_linear_layout_padding_top">
 

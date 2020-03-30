@@ -137,7 +137,7 @@ public class IdentifyLetterActivity extends AppCompatActivity {
                 }
               }
               soundEffectMediaPlayer = MediaPlayer.create(IdentifyLetterActivity.this,getSoundEffectResource() );
-              soundEffectMediaPlayer.setVolume(1f, 1f);
+              soundEffectMediaPlayer.setVolume(0.6f, 0.6f);
               soundEffectMediaPlayer.start();
 
 
