@@ -5,7 +5,8 @@
 
     <dimen name="level_button_width">180dp</dimen>
     <dimen name="level_button_height">120dp</dimen>
-    <dimen name="level_button_text_size">48sp</dimen>
+    <!-- dp and not sp because the text size is the biggest it should be and already accessible -->
+    <dimen name="level_button_text_size">48dp</dimen>
     <dimen name="level_button_margin">24dp</dimen>
     <dimen name="level_button_padding">10dp</dimen>
 
@@ -14,18 +15,21 @@
     <dimen name="main_menu_view_hight">260dp</dimen>
 
     <dimen name="main_menu_cell_padding">10dp</dimen>
-    <dimen name="main_menu_text_size">50sp</dimen>
+    <!-- dp and not sp because the text size is the biggest it should be and already accessible -->
+    <dimen name="main_menu_text_size">50dp</dimen>
 
     <dimen name="identify_letter_width">160dp</dimen>
     <dimen name="identify_letter_height">240dp</dimen>
     <dimen name="identify_letter_padding">10dp</dimen>
-    <dimen name="identify_letter_text_size">120sp</dimen>
+    <!-- dp and not sp because the text size is the biggest it should be and already accessible -->
+    <dimen name="identify_letter_text_size">120dp</dimen>
     <dimen name="identify_letter_margin">36dp</dimen>
 
     <dimen name="letter_view_width">100dp</dimen>
     <dimen name="letter_view_hight">160dp</dimen>
     <dimen name="letter_view_padding">6dp</dimen>
-    <dimen name="letter_view_text_size">80sp</dimen>
+    <!-- dp and not sp because the text size is the biggest it should be and already accessible -->
+    <dimen name="letter_view_text_size">80dp</dimen>
 
 
     <dimen name="button_width">85dp</dimen>
@@ -40,7 +44,8 @@
     <dimen name="find_wrong_letter_width">140dp</dimen>
     <dimen name="find_wrong_letter_height">200dp</dimen>
     <dimen name="find_wrong_letter_padding">10dp</dimen>
-    <dimen name="find_wrong_letter_text_size">100sp</dimen>
+    <!-- dp and not sp because the text size is the biggest it should be and already accessible -->
+    <dimen name="find_wrong_letter_text_size">100dp</dimen>
     <dimen name="find_wrong_letter_margin">20dp</dimen>
     <dimen name="wrong_letter_hint_button_padding">70dp</dimen>
     <dimen name="wrong_letter_button_width">90dp</dimen>

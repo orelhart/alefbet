@@ -6,7 +6,8 @@
     <dimen name="letter_view_width">60dp</dimen>
     <dimen name="letter_view_hight">100dp</dimen>
     <dimen name="letter_view_padding">6dp</dimen>
-    <dimen name="letter_view_text_size">48sp</dimen>
+    <!-- dp and not sp because the text size is the biggest it should be and already accessible -->
+    <dimen name="letter_view_text_size">48dp</dimen>
 
     <integer name="letters_in_row">5</integer>
     <dimen name="cell_margin">10dp</dimen>
@@ -17,17 +18,20 @@
 
     <dimen name="level_button_width">90dp</dimen>
     <dimen name="level_button_height">60dp</dimen>
-    <dimen name="level_button_text_size">24sp</dimen>
+    <!-- dp and not sp because the text size is the biggest it should be and already accessible -->
+    <dimen name="level_button_text_size">24dp</dimen>
     <dimen name="level_button_margin">16dp</dimen>
     <dimen name="level_button_padding">6dp</dimen>
 
     <dimen name="main_menu_cell_padding">6dp</dimen>
-    <dimen name="main_menu_text_size">30sp</dimen>
+    <!-- dp and not sp because the text size is the biggest it should be and already accessible -->
+    <dimen name="main_menu_text_size">30dp</dimen>
 
     <dimen name="identify_letter_width">90dp</dimen>
     <dimen name="identify_letter_height">150dp</dimen>
     <dimen name="identify_letter_padding">6dp</dimen>
-    <dimen name="identify_letter_text_size">72sp</dimen>
+    <!-- dp and not sp because the text size is the biggest it should be and already accessible -->
+    <dimen name="identify_letter_text_size">72dp</dimen>
     <dimen name="identify_letter_margin">16dp</dimen>
     <dimen name="sound_button_padding">24dp</dimen>
     <dimen name="hint_button_padding">12dp</dimen>
@@ -41,7 +45,8 @@
     <dimen name="find_wrong_letter_width">65dp</dimen>
     <dimen name="find_wrong_letter_height">110dp</dimen>
     <dimen name="find_wrong_letter_padding">6dp</dimen>
-    <dimen name="find_wrong_letter_text_size">65sp</dimen>
+    <!-- dp and not sp because the text size is the biggest it should be and already accessible -->
+    <dimen name="find_wrong_letter_text_size">65dp</dimen>
     <dimen name="find_wrong_letter_margin">6dp</dimen>
     <dimen name="wrong_letter_hint_button_padding">48dp</dimen>
     <dimen name="wrong_letter_button_width">60dp</dimen>
