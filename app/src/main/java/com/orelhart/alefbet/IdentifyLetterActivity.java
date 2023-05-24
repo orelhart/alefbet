@@ -136,10 +136,9 @@ public class IdentifyLetterActivity extends AppCompatActivity {
                   soundEffectMediaPlayer.release();
                 }
               }
-              soundEffectMediaPlayer = MediaPlayer.create(IdentifyLetterActivity.this,getSoundEffectResource() );
+              soundEffectMediaPlayer = MediaPlayer.create(IdentifyLetterActivity.this, getSoundEffectResource() );
               soundEffectMediaPlayer.setVolume(0.6f, 0.6f);
               soundEffectMediaPlayer.start();
-
 
 
               setLettersDisabled();

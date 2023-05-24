@@ -44,10 +44,8 @@ public class EffectsUtils {
         Random r = new Random();
         int i = r.nextInt(3);
 
-        switch (i){
-
+        switch (i) {
             case 0:
-
                 scaleAnimationX =
                         ObjectAnimator.ofFloat(v, "scaleX",  1f, 1.4f, 1f);
                 scaleAnimationY =

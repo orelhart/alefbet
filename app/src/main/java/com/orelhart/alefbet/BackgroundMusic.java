@@ -28,7 +28,9 @@ public class BackgroundMusic {
   }
 
   public void resume() {
-    mMediaPlayer.start();
+    if (mMediaPlayer != null) {
+      mMediaPlayer.start();
+    }
   }
 
   public void start() {

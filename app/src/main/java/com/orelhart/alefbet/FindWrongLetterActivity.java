@@ -61,9 +61,6 @@ public class FindWrongLetterActivity extends AppCompatActivity {
 
                 if (isItTHeWrongLetter(v)){
 
-
-
-
                     if (mediaPlayer != null) {
                         mediaPlayer.stop();
                         if (!mediaPlayer.isPlaying()) {

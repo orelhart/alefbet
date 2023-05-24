@@ -16,232 +16,238 @@ import androidx.core.content.ContextCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-  public static final int MODE_EASY = 1;
-  public static final int MODE_HARD = 2;
-  public static final String MODE = "mode";
-  private static final byte STATE_MAIN_MENU = 0;
-  private static final byte STATE_PREFERENCE = 1;
-  public static final byte MUSIC_STOP = 0;
-  public static final byte MUSIC_PLAY = 1;
-  public static final String BACKGROUND_MUSIC_STATE = "background_music_state";
-  LinearLayout linearLayout;
-  LinearLayout hidenLinearLayout;
-  ImageView volumeButton;
-  private byte state;
-  private byte musicButtonState;
+	public static final int MODE_EASY = 1;
+	public static final int MODE_HARD = 2;
+	public static final String MODE = "mode";
+	private static final byte STATE_MAIN_MENU = 0;
+	private static final byte STATE_PREFERENCE = 1;
+	public static final byte MUSIC_STOP = 0;
+	public static final byte MUSIC_PLAY = 1;
+	public static final String BACKGROUND_MUSIC_STATE = "background_music_state";
+	LinearLayout linearLayout;
+	LinearLayout hidenLinearLayout;
+	ImageView volumeButton;
+	private byte state;
+	private byte musicButtonState;
 
-  @Override
-  protected void onCreate(@Nullable Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-    state = STATE_MAIN_MENU;
+	@Override
+	protected void onCreate(@Nullable Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		state = STATE_MAIN_MENU;
+		BackgroundMusic.get(this).start();
+		musicButtonState =
+				(byte)
+						PreferenceManager.getDefaultSharedPreferences(this)
+								.getInt(BACKGROUND_MUSIC_STATE, MUSIC_PLAY);
 
-    BackgroundMusic.get(this).start();
-    musicButtonState =
-        (byte)
-            PreferenceManager.getDefaultSharedPreferences(this)
-                .getInt(BACKGROUND_MUSIC_STATE, MUSIC_PLAY);
+		TextView lettersOrder = findViewById(R.id.game_2);
+		TextView identifyTheLetter = findViewById(R.id.game_1);
+		TextView findWrongLetter = findViewById(R.id.game_3);
 
-    TextView lettersOrder = findViewById(R.id.game_2);
-    TextView identifyTheLetter = findViewById(R.id.game_1);
-    TextView findWrongLetter = findViewById(R.id.game_3);
+		View.OnClickListener onClickListener =
+				new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
 
-    View.OnClickListener onClickListener =
-        new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
+						Intent intent;
 
-            Intent intent;
+						switch (v.getId()) {
 
-            switch (v.getId()) {
+							case R.id.game_3:
+								intent = new Intent(MainActivity.this, FindWrongLetterActivity.class);
+								MainActivity.this.startActivity(intent);
+								break;
 
-              case R.id.game_3:
-                intent = new Intent(MainActivity.this, FindWrongLetterActivity.class);
-                MainActivity.this.startActivity(intent);
-                break;
+							case R.id.game_2:
+								intent = new Intent(MainActivity.this, LettersOrderActivity.class);
+								MainActivity.this.startActivity(intent);
+								break;
 
-              case R.id.game_2:
-                intent = new Intent(MainActivity.this, LettersOrderActivity.class);
-                MainActivity.this.startActivity(intent);
-                break;
+							case R.id.game_1:
+								modePreference();
 
-              case R.id.game_1:
-                modePreference();
+								break;
+						}
+					}
+				};
+		lettersOrder.setOnClickListener(onClickListener);
+		identifyTheLetter.setOnClickListener(onClickListener);
+		findWrongLetter.setOnClickListener(onClickListener);
 
-                break;
-            }
-          }
-        };
-    lettersOrder.setOnClickListener(onClickListener);
-    identifyTheLetter.setOnClickListener(onClickListener);
-    findWrongLetter.setOnClickListener(onClickListener);
+		volumeButton = findViewById(R.id.sound_button);
 
-    volumeButton = findViewById(R.id.sound_button);
+		View.OnClickListener sundButtonOnClickListener =
+				new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
 
-    View.OnClickListener sundButtonOnClickListener =
-        new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
+						switch (musicButtonState) {
+							case MUSIC_PLAY:
+								BackgroundMusic.get(MainActivity.this).pause();
+								musicButtonState = MUSIC_STOP;
+								applyMusicButtonStateToPrefs();
 
-            switch (musicButtonState) {
-              case MUSIC_PLAY:
-                BackgroundMusic.get(MainActivity.this).pause();
-                musicButtonState = MUSIC_STOP;
-                applyMusicButtonStateToPrefs();
+								setSoundButtonOff();
+								break;
 
-                setSoundButtonOff();
-                break;
+							case MUSIC_STOP:
+								BackgroundMusic.get(MainActivity.this).resume();
+								musicButtonState = MUSIC_PLAY;
+								applyMusicButtonStateToPrefs();
 
-              case 0:
-                BackgroundMusic.get(MainActivity.this).resume();
-                musicButtonState = MUSIC_PLAY;
-                applyMusicButtonStateToPrefs();
+								setSoundButtonOn();
+								break;
 
-                setSoundButtonOn();
-                break;
+							default:
+								throw new IllegalStateException("Unexpected value: " + musicButtonState);
+						}
+					}
+				};
 
-              default:
-                throw new IllegalStateException("Unexpected value: " + musicButtonState);
-            }
-          }
-        };
 
-    volumeButton.setOnClickListener(sundButtonOnClickListener);
-  }
 
-  @Override
-  protected void onSaveInstanceState(@NonNull Bundle outState) {
-    super.onSaveInstanceState(outState);
-  }
 
-  private void modePreference() {
 
-    state = STATE_PREFERENCE;
 
-    animateModePreference();
 
-    final TextView easyModeView = findViewById(R.id.mode_easy);
-    TextView hardModeView = findViewById(R.id.mode_hard);
 
-    View.OnClickListener onClickListener =
-        new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
+		volumeButton.setOnClickListener(sundButtonOnClickListener);
+	}
 
-            Intent intent;
+	@Override
+	protected void onSaveInstanceState(@NonNull Bundle outState) {
+		super.onSaveInstanceState(outState);
+	}
 
-            switch (v.getId()) {
-              case R.id.mode_hard:
-                intent = new Intent(MainActivity.this, IdentifyLetterActivity.class);
-                intent.putExtra(MainActivity.MODE, MODE_HARD);
-                MainActivity.this.startActivity(intent);
-                break;
+	private void modePreference() {
 
-              default:
-                intent = new Intent(MainActivity.this, IdentifyLetterActivity.class);
-                intent.putExtra(MainActivity.MODE, MODE_EASY);
-                MainActivity.this.startActivity(intent);
-            }
-          }
-        };
+		state = STATE_PREFERENCE;
 
-    easyModeView.setOnClickListener(onClickListener);
-    hardModeView.setOnClickListener(onClickListener);
-  }
+		animateModePreference();
 
-  private void applyMusicButtonStateToPrefs() {
-    PreferenceManager.getDefaultSharedPreferences(this)
-        .edit()
-        .putInt(BACKGROUND_MUSIC_STATE, musicButtonState)
-        .apply();
-  }
+		final TextView easyModeView = findViewById(R.id.mode_easy);
+		TextView hardModeView = findViewById(R.id.mode_hard);
 
-  private void animateModePreference() {
+		View.OnClickListener onClickListener =
+				new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
 
-    linearLayout
-        .animate()
-        .alpha(0f)
-        .setDuration(400)
-        .setInterpolator(new DecelerateInterpolator())
-        .start();
-    linearLayout.setVisibility(View.GONE);
-    hidenLinearLayout.setAlpha(0f);
-    hidenLinearLayout.setVisibility(View.VISIBLE);
-    hidenLinearLayout
-        .animate()
-        .alpha(1f)
-        .setDuration(400)
-        .setInterpolator(new DecelerateInterpolator())
-        .start();
-  }
+						Intent intent;
 
-  private void setSoundButtonOff() {
+						switch (v.getId()) {
+							case R.id.mode_hard:
+								intent = new Intent(MainActivity.this, IdentifyLetterActivity.class);
+								intent.putExtra(MainActivity.MODE, MODE_HARD);
+								MainActivity.this.startActivity(intent);
+								break;
 
-    volumeButton.setImageResource(R.drawable.round_volume_off_black_18);
-    volumeButton.setColorFilter(ContextCompat.getColor(this, R.color.colorVolumeButtonPaused));
-  }
+							default:
+								intent = new Intent(MainActivity.this, IdentifyLetterActivity.class);
+								intent.putExtra(MainActivity.MODE, MODE_EASY);
+								MainActivity.this.startActivity(intent);
+						}
+					}
+				};
 
-  private void setSoundButtonOn() {
+		easyModeView.setOnClickListener(onClickListener);
+		hardModeView.setOnClickListener(onClickListener);
+	}
 
-    volumeButton.setImageResource(R.drawable.round_volume_up_black_18);
-    volumeButton.setColorFilter(ContextCompat.getColor(this, R.color.colorVolumeButton));
-  }
+	private void applyMusicButtonStateToPrefs() {
+		PreferenceManager.getDefaultSharedPreferences(this)
+				.edit()
+				.putInt(BACKGROUND_MUSIC_STATE, musicButtonState)
+				.apply();
+	}
 
-  @Override
-  protected void onStart() {
+	private void animateModePreference() {
 
-    linearLayout = findViewById(R.id.linear_layout);
-    hidenLinearLayout = findViewById(R.id.hiden_linear_layout);
+		linearLayout
+				.animate()
+				.alpha(0f)
+				.setDuration(400)
+				.setInterpolator(new DecelerateInterpolator())
+				.start();
+		linearLayout.setVisibility(View.GONE);
+		hidenLinearLayout.setAlpha(0f);
+		hidenLinearLayout.setVisibility(View.VISIBLE);
+		hidenLinearLayout
+				.animate()
+				.alpha(1f)
+				.setDuration(400)
+				.setInterpolator(new DecelerateInterpolator())
+				.start();
+	}
 
-    linearLayout.setAlpha(1f);
-    hidenLinearLayout.setVisibility(View.GONE);
+	private void setSoundButtonOff() {
 
-    super.onStart();
-  }
+		volumeButton.setImageResource(R.drawable.round_volume_off_black_18);
+		volumeButton.setColorFilter(ContextCompat.getColor(this, R.color.colorVolumeButtonPaused));
+	}
 
-  @Override
-  public void onBackPressed() {
+	private void setSoundButtonOn() {
 
-    switch (state) {
-      case STATE_MAIN_MENU:
-        super.onBackPressed();
-        break;
+		volumeButton.setImageResource(R.drawable.round_volume_up_black_18);
+		volumeButton.setColorFilter(ContextCompat.getColor(this, R.color.colorVolumeButton));
+	}
 
-      case STATE_PREFERENCE:
-        reverseAnimation();
-        state = STATE_MAIN_MENU;
-    }
-  }
+	@Override
+	protected void onStart() {
 
-  private void reverseAnimation() {
+		linearLayout = findViewById(R.id.linear_layout);
+		hidenLinearLayout = findViewById(R.id.hiden_linear_layout);
 
-    hidenLinearLayout
-        .animate()
-        .alpha(0f)
-        .setDuration(400)
-        .setInterpolator(new DecelerateInterpolator())
-        .start();
-    hidenLinearLayout.setVisibility(View.GONE);
-    linearLayout.setVisibility(View.VISIBLE);
-    linearLayout
-        .animate()
-        .alpha(1f)
-        .setDuration(400)
-        .setInterpolator(new DecelerateInterpolator())
-        .start();
-  }
+		linearLayout.setAlpha(1f);
+		hidenLinearLayout.setVisibility(View.GONE);
 
-  @Override
-  protected void onResume() {
-    super.onResume();
+		super.onStart();
+	}
 
-    linearLayout.setVisibility(View.VISIBLE);
-    hidenLinearLayout.setVisibility(View.GONE);
-    state = STATE_MAIN_MENU;
+	@Override
+	public void onBackPressed() {
 
-    if (musicButtonState == MUSIC_STOP) {
-      BackgroundMusic.get(this).pause();
-      setSoundButtonOff();
-    }
-  }
+		switch (state) {
+			case STATE_MAIN_MENU:
+				super.onBackPressed();
+				break;
+
+			case STATE_PREFERENCE:
+				reverseAnimation();
+				state = STATE_MAIN_MENU;
+		}
+	}
+
+	private void reverseAnimation() {
+
+		hidenLinearLayout
+				.animate()
+				.alpha(0f)
+				.setDuration(400)
+				.setInterpolator(new DecelerateInterpolator())
+				.start();
+		hidenLinearLayout.setVisibility(View.GONE);
+		linearLayout.setVisibility(View.VISIBLE);
+		linearLayout
+				.animate()
+				.alpha(1f)
+				.setDuration(400)
+				.setInterpolator(new DecelerateInterpolator())
+				.start();
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+
+		linearLayout.setVisibility(View.VISIBLE);
+		hidenLinearLayout.setVisibility(View.GONE);
+		state = STATE_MAIN_MENU;
+
+		if (musicButtonState == MUSIC_STOP) {
+			BackgroundMusic.get(this).pause();
+			setSoundButtonOff();
+		}
+	}
 }
